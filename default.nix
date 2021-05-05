@@ -34,4 +34,8 @@ in
     {
         lib=archiveQRMaker;
         bin=(python.pkgs.toPythonApplication archiveQRMaker);
+        shell=pkgs.mkShell {
+            propagatedBuildInputs=archiveQRMaker.propagatedBuildInputs;
+
+        };
     }
