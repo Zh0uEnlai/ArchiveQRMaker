@@ -1,0 +1,86 @@
+{
+  "nodes": {
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1619345332,
+        "narHash": "sha256-qHnQkEp1uklKTpx3MvKtY6xzgcqXDsz5nLilbbuL+3A=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "2ebf2558e5bf978c7fb8ea927dfaed8fefab2e28",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "mach-nix": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "pypi-deps-db": [
+          "pypi-deps-db"
+        ]
+      },
+      "locked": {
+        "lastModified": 1619614179,
+        "narHash": "sha256-cf7RsJwnqiVi6hnDZCTHwGxEfvdI7NcV1vxvxrMCfPM=",
+        "owner": "DavHau",
+        "repo": "mach-nix",
+        "rev": "a7ddac2ce8942421fdb26207b5f69f9fa85de69f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "DavHau",
+        "repo": "mach-nix",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1620257377,
+        "narHash": "sha256-zgeq0bC8xvWgfz41bwuaixF6LDfoDVObM5TzrhrwgoQ=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "1374bfa2d39eff398147265ece138e0c3151b28d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "pypi-deps-db": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1620290050,
+        "narHash": "sha256-ytum3BflCfIKjwkMy9RFTOMbkpeIyObEd+kIqVGIdto=",
+        "owner": "DavHau",
+        "repo": "pypi-deps-db",
+        "rev": "8f86c2dbe751a7d05cc12ea6a099f85f2700d50a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "DavHau",
+        "repo": "pypi-deps-db",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "mach-nix": "mach-nix",
+        "nixpkgs": "nixpkgs",
+        "pypi-deps-db": "pypi-deps-db"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

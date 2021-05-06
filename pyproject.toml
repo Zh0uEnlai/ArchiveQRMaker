@@ -1,0 +1,4 @@
+[project]
+name = "infer_pyproject"
+version = "0.1.0"
+description = "Create a pyproject.toml file for an existing project."

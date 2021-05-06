@@ -1,0 +1,5 @@
+setuptools==55.0.0
+pyqrcode==1.2.1 
+selenium==3.141.0
+requests==2.25.1
+#git+git://github.com/loonghao/photoshop-python-api@0.15.1#egg=photoshop-python-api

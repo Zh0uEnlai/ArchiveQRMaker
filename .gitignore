@@ -1,6 +1,12 @@
 # Nix
 result
 
+# VS Code
+.vscode/
+
+# Webdriver log
+geckodriver.log
+
 # MacOS
 .DS_Store
 

@@ -3,11 +3,21 @@
 ,   lib ? pkgs.lib
 ,   python ? pkgs.python39
 }:
-    let pname = "archive_qr";
+    let 
+        pname = "archive_qr";
         name=pname;
         version = "0.3";
 
-        archiveQRMaker = python.pkgs.buildPythonPackage {
+        mach-nix = import (builtins.fetchGit {
+            url = "https://github.com/DavHau/mach-nix/";
+            ref = "refs/tags/3.1.1";  # update this version
+            }) {
+                pypiDataRev = "8f86c2dbe751a7d05cc12ea6a099f85f2700d50a";
+                pypiDataSha256 = "1nkni18sj279fz2fdj48jy91pqsc8pacn309iw5g42g52zfadnya";
+                python = "python38";
+            };
+
+        archiveQRMaker = mach-nix.buildPythonApplication {
 
             inherit pname version;
         
@@ -19,6 +29,8 @@
             ];
 
             src = ./.;
+
+            requirements = ./requirements.txt;
 
             # No tests in PyPI tarball
             doCheck = false;
@@ -32,10 +44,6 @@
         };
 in 
     {
-        lib=archiveQRMaker;
-        bin=(python.pkgs.toPythonApplication archiveQRMaker);
-        shell=pkgs.mkShell {
-            propagatedBuildInputs=archiveQRMaker.propagatedBuildInputs;
-
-        };
+        bin=archiveQRMaker;
+        lib=(python.pkgs.toPythonModule archiveQRMaker);
     }

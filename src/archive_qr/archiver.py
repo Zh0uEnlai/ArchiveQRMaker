@@ -166,9 +166,6 @@ def archive(url: str) -> str:
     with suppress(NoSuchElementException):
         browser.find_element_by_css_selector("#submiturl").click()
 
-
-    webdriver.implicitly_wait(100)
-
     return "yeet"
 
 
@@ -254,7 +251,7 @@ def create_subdir(url: str) -> str:
         directory.mkdir(exists_ok=True)
 
     # Base filename without an extension.
-    base_filename = ".".join(dir_name, get_filename_from_url(url))
+    base_filename = f"{directory!s}.{get_filename_from_url(url)}"
 
     # Move to the directory.
     os.chdir(directory.resolve())
